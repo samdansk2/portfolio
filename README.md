@@ -1,6 +1,7 @@
 # Shaik Samdan - Portfolio Website
 
 A modern, responsive portfolio website for showcasing my work as a Data & AI Practitioner.
+see live demo site [PORTFOLIO](https://sksamdan.github.io/portfolio/)
 
 ## 🌟 Features
 
@@ -88,10 +89,3 @@ The contact form uses EmailJS. To set up your own:
 ## 📄 License
 
 © 2025 Shaik Samdan. All rights reserved.
-
-## 🔗 Links
-
-- **Live Site**: [Portfolio](https://samdansk2.github.io/portfolio/)
-- **LinkedIn**: [samdanshaik](https://linkedin.com/in/samdanshaik)
-- **GitHub**: [samdansk2](https://github.com/samdansk2)
-- **Email**: ace.samdan@gmail.com
