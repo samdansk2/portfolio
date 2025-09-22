@@ -1,0 +1,16 @@
+{
+  "name": "Shaik Samdan - Data & AI Practitioner Portfolio",
+  "short_name": "Samdan Portfolio",
+  "description": "Portfolio of Shaik Samdan, Data & AI Practitioner specializing in Machine Learning, Deep Learning, and NLP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#00d9ff",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
