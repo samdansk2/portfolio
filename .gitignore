@@ -49,4 +49,4 @@ private/
 
 # Resume (keep local only)
 resume_base64.txt
-resume-data.js
+# resume-data.js is now tracked for deployment
