@@ -14,27 +14,6 @@ see live demo site here [PORTFOLIO](https://samdansk2.github.io/portfolio/)
 - **SEO Ready**: Complete with meta tags, structured data, and sitemap
 - **Accessibility**: WCAG 2.1 AA compliant with keyboard navigation support
 
-## 📁 Project Structure
-
-```
-portfolio/
-├── assets/
-│   ├── css/
-│   │   └── style.css        # Main stylesheet
-│   └── js/
-│       ├── script.js        # Main JavaScript file
-│       └── emailjs-config.js # EmailJS configuration
-├── .github/
-│   └── workflows/
-│       └── deploy.yml       # GitHub Actions deployment workflow
-├── index.html               # Main HTML file
-├── resume.pdf              # Resume document
-├── manifest.json           # PWA manifest
-├── robots.txt             # SEO robots file
-├── sitemap.xml            # SEO sitemap
-└── README.md              # This file
-```
-
 ## 📧 Contact Form Setup
 
 The contact form uses EmailJS. To set up your own:
