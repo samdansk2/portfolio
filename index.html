@@ -99,9 +99,9 @@
                     <h2 class="hero-subtitle">Data & AI Practitioner</h2>
                     <p class="hero-tagline">Transforming data into intelligent solutions</p>
                     <div class="hero-buttons">
-                        <a href="resume.pdf" download class="btn btn-secondary">
+                        <button onclick="viewResume()" class="btn btn-secondary">
                             <span>Download Resume</span>
-                        </a>
+                        </button>
                         <a href="#projects" class="btn btn-primary">
                             <span>View Projects <span style="font-size: 1.2em; vertical-align: 0.0em; display: inline-block;">↓</span></span>
                         </a>
@@ -340,6 +340,33 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- Resume Data (local only, gitignored) -->
+    <script src="resume-data.js"></script>
+    <script>
+        function viewResume() {
+            // Check if resume data exists
+            if (typeof resumeData === 'undefined') {
+                alert('Resume is not available at this moment. Please contact me directly.');
+                return;
+            }
+
+            // Convert base64 to blob
+            const byteCharacters = atob(resumeData);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            const blob = new Blob([byteArray], {type: 'application/pdf'});
+
+            // Create object URL and open in new tab
+            const fileURL = URL.createObjectURL(blob);
+            window.open(fileURL, '_blank');
+
+            // Clean up the object URL after a delay
+            setTimeout(() => URL.revokeObjectURL(fileURL), 100);
+        }
+    </script>
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- EmailJS Configuration -->

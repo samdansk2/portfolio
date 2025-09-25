@@ -13,7 +13,9 @@ _site/
 *.sublime-*
 *.swp
 *.swo
-*~
+*~        
+*.pdf
+
 
 # OS files
 .DS_Store
@@ -44,3 +46,7 @@ yarn-error.log*
 notes.md
 TODO.md
 private/
+
+# Resume (keep local only)
+resume_base64.txt
+resume-data.js
