@@ -34,11 +34,14 @@
     <link rel="manifest" href="manifest.json">
 
     <!-- Theme Color -->
-    <meta name="theme-color" content="#00d9ff">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -67,191 +70,503 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <a href="#home">Shaik Samdan</a>
+            <div class="hamburger-wrapper">
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menuPanel">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <span class="menu-text">Menu</span>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
         </div>
     </nav>
+
+    <!-- Menu Panel -->
+    <div class="menu-panel" id="menuPanel" aria-hidden="true">
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <div class="menu-content">
+            <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="menu-inner">
+                <nav class="menu-nav">
+                    <a href="#home" class="menu-link">Home</a>
+                    <a href="#about" class="menu-link">About</a>
+                    <a href="#projects" class="menu-link">Portfolio</a>
+                    <a href="#skills" class="menu-link">Services</a>
+                </nav>
+                <div class="menu-contact">
+                    <h3 class="contact-title">Contact</h3>
+                    <p class="contact-subtitle">Get in touch to work together</p>
+                    <div class="social-links">
+                        <a href="mailto:ace.samdan@gmail.com" class="social-link" aria-label="Gmail">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/samdanshaik" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero section">
+        <section id="home" class="hero section view">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text-content">
-                        <h1 class="hero-title">
-                            <span class="text-gradient">Shaik Samdan</span>
-                        </h1>
-                        <h2 class="hero-subtitle">Data Science & AI Practitioner</h2>
-                        <p class="hero-tagline">Transforming data into intelligent solutions</p>
-                        <div class="hero-buttons">
-                            <button onclick="viewResume()" class="btn btn-secondary">
-                                <span>Download Resume</span>
-                            </button>
-                            <a href="#projects" class="btn btn-primary">
-                                <span>View Projects <span style="font-size: 1.2em; vertical-align: 0.0em; display: inline-block;">↓</span></span>
+                        <h1 class="hero-title">Shaik Samdan</h1>
+                        <p class="hero-tagline">I build Scalable AI/ML workflows for businesses</p>
+                    </div>
+                    <div class="hero-image-container">
+                        <img src="assets/images/professional.png" alt="Shaik Samdan" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section (Black Background) -->
+        <section id="intro" class="intro-section section">
+            <div class="container">
+                <div class="intro-content">
+                    <p class="intro-text">
+                        Hi <span class="emoji-wave">👋</span>! I'm a Junior Data Scientist in the making, With a strong passion for building
+                        <span class="highlight-badge highlight-green">Scalable AI/ML Workflows</span>,
+                        I continuously evolve, crafting AI-powered automated solutions through
+                        <span class="highlight-badge highlight-purple">code, data, and innovation</span>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section - Multi-Section with Color Backgrounds -->
+        <section id="about" class="about-multi-section view">
+            <!-- Section 1: About Me (Light Beige) -->
+            <div class="about-section about-me-section">
+                <div class="container">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <a href="#home" class="breadcrumb-link">Home</a>
+                        <span class="breadcrumb-separator">></span>
+                        <span class="breadcrumb-current">About</span>
+                    </nav>
+                    <div class="about-section-content">
+                        <div class="about-text-column">
+                            <h2 class="about-section-title">About Me</h2>
+                            <p class="about-section-description">I'm a Junior data scientist in the making, Specialized in creating scalable AI/ML applications.</p>
+                        </div>
+                        <div class="about-profile-card">
+                            <img src="assets/images/professional.png" alt="Samdan Shaik" class="profile-card-image">
+                            <h3 class="profile-card-name">Samdan Shaik</h3>
+                            <a href="https://linkedin.com/in/samdanshaik" target="_blank" rel="noopener noreferrer" class="profile-social-link" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
                             </a>
                         </div>
                     </div>
-                    <div class="hero-image-container">
-                        <div class="image-wrapper">
-                            <img src="assets/images/professional.png" alt="Shaik Samdan" class="hero-image">
-                            <div class="image-border"></div>
+                </div>
+            </div>
+
+            <!-- Section 2: Experience (Light Blue) -->
+            <div class="about-section experience-section">
+                <div class="container">
+                    <div class="about-section-content-single">
+                        <h2 class="about-section-title">Experience</h2>
+                        <p class="about-section-text">I Previously worked as a data scientist at <a href="https://www.linkedin.com/company/aceengineer/" target="_blank" rel="noopener noreferrer" class="section-inline-link">AceEngineer, Inc.</a> Developing AI based solutions for clients using skills like Python, ML, DL, NLP, Data Visualization and MLOps.</p>
+                        <p class="about-section-text">Also completed my graduation at RGUKT Srikakulam university with Computer science specialization. Where I learnt fundamentals of programming, data structures, algorithms, and software development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Education (Dark Gray) -->
+            <div class="about-section education-section">
+                <div class="container">
+                    <div class="about-section-content-single">
+                        <h2 class="about-section-title">Education</h2>
+                        <p class="about-section-text">Completed my Bachelors of Technology in Computer Science and Engineering at Rajiv Gandhi University of Knowledge Technologies, Srikakulam (<a href="https://rguktsklm.ac.in/" target="_blank" rel="noopener noreferrer" class="section-inline-link">RGUKT Srikakulam</a>).</p>
+                        <p class="about-section-text">Graduated with a GPA of 7.45 / 10</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Interests (Purple/Lavender) -->
+            <div class="about-section interests-section">
+                <div class="container">
+                    <div class="about-section-content-single">
+                        <h2 class="about-section-title">Interests</h2>
+                        <p class="about-section-text">I am interested in unfolding scalable AI/ML Workflows and enjoys collaborating with diverse teams to bring ideas to life. Beyond coding, I regularly read blogs on AI Trend/Updates. In my free time, I enjoy interacting with new people, exploring innovative ideas and working on projects that excites me.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section - Multi-Section Layout -->
+        <section id="skills" class="services-multi-section view">
+            <!-- Breadcrumb -->
+            <div class="services-breadcrumb-section">
+                <div class="container">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                        <a href="#home" class="breadcrumb-link">Home</a>
+                        <span class="breadcrumb-separator">></span>
+                        <span class="breadcrumb-current">Services</span>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Section 1: Services Header -->
+            <div class="services-header-section">
+                <div class="container">
+                    <h1 class="services-main-title">Services</h1>
+                </div>
+            </div>
+
+            <!-- Section 2: Hero/Introduction -->
+            <div class="services-hero-section">
+                <div class="container">
+                    <h2 class="services-hero-title">What I Do</h2>
+                </div>
+            </div>
+
+            <!-- Section 3: Specialized Services -->
+            <div class="services-boxes-section">
+                <div class="container">
+                    <div class="services-boxes-grid">
+                        <div class="service-box">
+                            <h3 class="service-box-title">Data-Driven Solutions</h3>
+                            <p class="service-box-description">Transform complex datasets into actionable business insights through advanced analytics and visualization</p>
+                        </div>
+                        <div class="service-box">
+                            <h3 class="service-box-title">AI-Powered Systems</h3>
+                            <p class="service-box-description">Build intelligent solutions using cutting-edge machine learning and deep learning technologies</p>
+                        </div>
+                        <div class="service-box">
+                            <h3 class="service-box-title">Predictive Analytics</h3>
+                            <p class="service-box-description">Create automated workflows and predictive models that drive business decision-making</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Tech Stack -->
+            <div class="services-techstack-section">
+                <div class="container">
+                    <h2 class="techstack-main-title">My TechStack</h2>
+                    <p class="techstack-tagline">Tools & Frameworks I use in my projects</p>
+                    <div class="skills-categories">
+                        <!-- Category 1: Data Science & AI -->
+                        <div class="skills-category">
+                            <h3 class="category-title">Data Science & AI</h3>
+                            <div class="skills-icon-grid">
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" class="skill-icon-img">
+                                    <span class="skill-name">Scikit-learn</span>
+                                </div>
+                                <div class="skill-item">
+                                    <svg class="skill-icon-img" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.5 7.5l-3 6h-3l-3-6h3l1.5 3 1.5-3h3zm-4.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                    </svg>
+                                    <span class="skill-name">XGBoost</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-icon-img">
+                                    <span class="skill-name">PyTorch</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-icon-img">
+                                    <span class="skill-name">NumPy</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-icon-img">
+                                    <span class="skill-name">Pandas</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="assets/icons/github-copilot-icon.webp" alt="GitHub Copilot" class="skill-icon-img">
+                                    <span class="skill-name">GitHub Copilot</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="assets/icons/claude-ai-icon.webp" alt="Claude Code" class="skill-icon-img">
+                                    <span class="skill-name">Claude Code</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="assets/icons/Tableau Logo.png" alt="Tableau" class="skill-icon-img">
+                                    <span class="skill-name">Tableau</span>
+                                </div>
+                                <div class="skill-item">
+                                    <svg class="skill-icon-img" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.252A9.748 9.748 0 0 0 2.252 12 9.748 9.748 0 0 0 12 21.748 9.748 9.748 0 0 0 21.748 12 9.748 9.748 0 0 0 12 2.252zm0 1.125A8.623 8.623 0 0 1 20.623 12 8.623 8.623 0 0 1 12 20.623 8.623 8.623 0 0 1 3.377 12 8.623 8.623 0 0 1 12 3.377z"/>
+                                    </svg>
+                                    <span class="skill-name">Seaborn</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg" alt="Plotly" class="skill-icon-img">
+                                    <span class="skill-name">Plotly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 2: Programming & Development Tools -->
+                        <div class="skills-category">
+                            <h3 class="category-title">Programming & Development Tools</h3>
+                            <div class="skills-icon-grid">
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon-img">
+                                    <span class="skill-name">Python</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="skill-icon-img">
+                                    <span class="skill-name">SQL Server</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-icon-img">
+                                    <span class="skill-name">MySQL</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yaml/yaml-original.svg" alt="YAML" class="skill-icon-img">
+                                    <span class="skill-name">YAML</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="skill-icon-img">
+                                    <span class="skill-name">FastAPI</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit" class="skill-icon-img">
+                                    <span class="skill-name">Streamlit</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon-img">
+                                    <span class="skill-name">Git</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="skill-icon-img">
+                                    <span class="skill-name">GitHub</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" class="skill-icon-img">
+                                    <span class="skill-name">GitHub Actions</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-icon-img">
+                                    <span class="skill-name">VS Code</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter Notebook" class="skill-icon-img">
+                                    <span class="skill-name">Jupyter Notebook</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" alt="Markdown" class="skill-icon-img">
+                                    <span class="skill-name">Markdown</span>
+                                </div>
+                                <div class="skill-item">
+                                    <svg class="skill-icon-img" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21.53 4.306v15.363q0 .807-.472 1.433-.472.627-1.253.85l-.216.037-.207.019L19.162 22q-.216 0-.403-.019l-.216-.037q-.781-.223-1.253-.85-.472-.626-.472-1.433V4.306q0-.78.472-1.4.472-.618 1.253-.847l.216-.037L19.162 2q.216 0 .403.019l.216.037q.781.229 1.253.847.472.62.472 1.4zM4.753 6.503l.031 10.297q0 .3.178.478.178.178.478.178h2.372q.3 0 .478-.178.178-.178.178-.478l.031-10.297h3.675q.3 0 .478-.178.178-.178.178-.478V4.031q0-.3-.178-.478-.178-.178-.478-.178H1.531q-.3 0-.478.178-.178.178-.178.478V5.847q0 .3.178.478.178.178.478.178h3.222z"/>
+                                    </svg>
+                                    <span class="skill-name">Microsoft Office</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="about section">
+        <!-- Projects Section - Overview -->
+        <section id="projects" class="projects-overview section view">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content glass-card">
-                    <p>Passionate Data Scientist with expertise in Machine Learning, Deep Learning, and Natural Language Processing. I specialize in transforming complex data into actionable insights and building intelligent systems that solve real-world problems.</p>
-                    <p>My journey in data science and AI is driven by curiosity and a commitment to innovation. I combine strong technical skills in Python, SQL, and cloud technologies with a deep understanding of statistical analysis and machine learning algorithms to deliver impactful solutions.</p>
-                </div>
-            </div>
-        </section>
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="#home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">Portfolio</span>
+                </nav>
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">Showcasing standout projects</p>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills section">
-            <div class="container">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <div class="skills-grid">
-                    <!-- Programming Languages -->
-                    <div class="skill-category">
-                        <h3 class="category-title">Programming Languages</h3>
-                        <div class="skill-cards">
-                            <div class="skill-card glass-card">Python</div>
-                            <div class="skill-card glass-card">SQL</div>
-                            <div class="skill-card glass-card">YAML</div>
+                <div class="projects-list">
+                    <!-- Project 1: Ecom-Sales Predictor -->
+                    <div class="project-item">
+                        <div class="project-image-column">
+                            <img src="assets/images/ecom-pred.png" alt="Ecom-Sales Predictor" class="project-overview-image">
+                        </div>
+                        <div class="project-details-column">
+                            <h3 class="project-item-title">Ecom-Sales Predictor</h3>
+                            <p class="project-item-summary">Developed a sequential ML pipeline to predict product success using sales data.</p>
+                            <a href="#project-ecom" class="project-view-link">View Project</a>
                         </div>
                     </div>
-                    <!-- Machine Learning & Deep Learning -->
-                    <div class="skill-category">
-                        <h3 class="category-title">Machine Learning & Deep Learning</h3>
-                        <div class="skill-cards">
-                            <div class="skill-card glass-card">Feature Engineering</div>
-                            <div class="skill-card glass-card">Classification</div>
-                            <div class="skill-card glass-card">Regression</div>
-                            <div class="skill-card glass-card">Cross Validation</div>
-                            <div class="skill-card glass-card">Hyperparameter Tuning</div>
-                            <div class="skill-card glass-card">Scikit-learn</div>
-                            <div class="skill-card glass-card">Neural Networks</div>
+
+                    <hr class="project-divider">
+
+                    <!-- Project 2: AI Forecast -->
+                    <div class="project-item">
+                        <div class="project-image-column">
+                            <img src="assets/images/ai_forecast.png" alt="AI Forecast" class="project-overview-image">
+                        </div>
+                        <div class="project-details-column">
+                            <h3 class="project-item-title">AI Forecast</h3>
+                            <p class="project-item-summary">Built an extensive market intelligence system to predict global AI market trends.</p>
+                            <a href="#project-ai-forecast" class="project-view-link">View Project</a>
                         </div>
                     </div>
-                    <!-- Data Science & AI -->
-                    <div class="skill-category">
-                        <h3 class="category-title">Data Science & AI</h3>
-                        <div class="skill-cards">
-                            <div class="skill-card glass-card">Data Analysis</div>
-                            <div class="skill-card glass-card">Data Wrangling</div>
-                            <div class="skill-card glass-card">Data Visualization</div>
-                            <div class="skill-card glass-card">NumPy</div>
-                            <div class="skill-card glass-card">Pandas</div>
-                            <div class="skill-card glass-card">Agentic AI</div>
-                            <div class="skill-card glass-card">Claude Code</div>
-                            <div class="skill-card glass-card">GitHub Copilot</div>
+
+                    <hr class="project-divider">
+
+                    <!-- Project 3: Oil & Gas Data Analysis -->
+                    <div class="project-item">
+                        <div class="project-image-column">
+                            <img src="assets/images/oil-gas-new.png" alt="Oil & Gas Data Analysis" class="project-overview-image">
                         </div>
-                    </div>
-                    <!-- Web Development & APIs -->
-                    <div class="skill-category">
-                        <h3 class="category-title">Web Development & APIs</h3>
-                        <div class="skill-cards">
-                            <div class="skill-card glass-card">Web Scraping</div>
-                            <div class="skill-card glass-card">FastAPI</div>
-                            <div class="skill-card glass-card">Streamlit</div>
-                            <div class="skill-card glass-card">API Development</div>
-                        </div>
-                    </div>
-                    <!-- Visualization & Tools -->
-                    <div class="skill-category">
-                        <h3 class="category-title">Visualization & Tools</h3>
-                        <div class="skill-cards">
-                            <div class="skill-card glass-card">Tableau</div>
-                            <div class="skill-card glass-card">Plotly</div>
-                            <div class="skill-card glass-card">Matplotlib</div>
-                            <div class="skill-card glass-card">Seaborn</div>
-                        </div>
-                    </div>
-                    <!-- Databases -->
-                    <div class="skill-category">
-                        <h3 class="category-title">Databases</h3>
-                        <div class="skill-cards">
-                            <div class="skill-card glass-card">SQL Server</div>
-                            <div class="skill-card glass-card">MySQL</div>
-                            <div class="skill-card glass-card">PostgreSQL</div>
-                        </div>
-                    </div>
-                    <!-- MLOps & Dev Tools -->
-                    <div class="skill-category">
-                        <h3 class="category-title">MLOps & Dev Tools</h3>
-                        <div class="skill-cards">
-                            <div class="skill-card glass-card">Git</div>
-                            <div class="skill-card glass-card">GitHub</div>
-                            <div class="skill-card glass-card">CI/CD Pipelines</div>
-                            <div class="skill-card glass-card">GitHub Actions</div>
-                            <div class="skill-card glass-card">VSCode</div>
-                            <div class="skill-card glass-card">Jupyter Notebook</div>
+                        <div class="project-details-column">
+                            <h3 class="project-item-title">Oil & Gas Data Analysis</h3>
+                            <p class="project-item-summary">Contributed to Oil & Gas Data project analyzing BSEE datasets, creating visualizations and insights.</p>
+                            <a href="#project-oil-gas" class="project-view-link">View Project</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects section">
+        <!-- Project Detail: Ecom-Sales Predictor -->
+        <section id="project-ecom" class="project-detail section view">
             <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
-                    <button class="filter-btn" data-filter="data">Data Analysis</button>
+                <nav class="breadcrumb breadcrumb-dark" aria-label="Breadcrumb">
+                    <a href="#home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">></span>
+                    <a href="#projects" class="breadcrumb-link">Portfolio</a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">Ecom-Sales Predictor</span>
+                </nav>
+                <h1 class="project-detail-title">Ecom-Sales Predictor</h1>
+                <a href="https://github.com/samdansk2/ecom-predict" target="_blank" rel="noopener noreferrer" class="project-code-link">View Code</a>
+
+                <div class="project-detail-image-wrapper">
+                    <img src="assets/images/ecom-pred.png" alt="Ecom-Sales Predictor" class="project-detail-image">
                 </div>
-                <div class="projects-grid">
-                    <!-- Ecom-Sales Predictor -->
-                    <div class="project-card glass-card" data-category="ml">
-                        <h3 class="project-title">Ecom-Sales Predictor</h3>
-                        <p class="project-description">Developed a sequential ML pipeline to predict product success using sales data, achieving 100% accuracy. Improved baseline model ROC-AUC from 82.4% to 90.3% for neural networks and reduced model training time by 60% through optimized RandomizedSearchCV tuning.</p>
-                        <p class="project-tech">Tech stack: Python, Scikit-learn, Neural Networks, XGBoost, Flask, SQL</p>
-                        <a href="https://github.com/samdansk2/ecom-predict" class="project-link btn-small">View on GitHub</a>
+
+                <div class="project-tech-stack">
+                    <h2 class="project-section-heading">Tech Stack</h2>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">Scikit-learn</div>
+                        <div class="tech-item">Pandas</div>
+                        <div class="tech-item">NumPy</div>
+                        <div class="tech-item">Machine Learning</div>
+                        <div class="tech-item">Data Analysis</div>
                     </div>
-                    <!-- AI Forecast -->
-                    <div class="project-card glass-card" data-category="ml">
-                        <h3 class="project-title">AI Forecast</h3>
-                        <p class="project-description">Pioneered an extensive market intelligence system to predict global AI market trends, achieving R² = 0.857 accuracy. Built an interactive Streamlit dashboard featuring 12 real-time KPI metrics and 7 dynamic visualizations.</p>
-                        <p class="project-tech">Tech stack: Python, Time-Series, Random Forest, Streamlit, SQL, Data Visualization</p>
-                        <a href="https://github.com/samdansk2/AI_Forecast" class="project-link btn-small">View on GitHub</a>
+                </div>
+
+                <div class="project-features">
+                    <h2 class="project-section-heading">Key Features</h2>
+                    <ul class="features-list">
+                        <li>Sequential ML pipeline for product success prediction</li>
+                        <li>Achieved 100% accuracy on test dataset</li>
+                        <li>Improved baseline model performance significantly</li>
+                        <li>Automated data preprocessing and feature engineering</li>
+                        <li>Comprehensive model evaluation and validation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail: AI Forecast -->
+        <section id="project-ai-forecast" class="project-detail section view">
+            <div class="container">
+                <nav class="breadcrumb breadcrumb-dark" aria-label="Breadcrumb">
+                    <a href="#home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">></span>
+                    <a href="#projects" class="breadcrumb-link">Portfolio</a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">AI Forecast</span>
+                </nav>
+                <h1 class="project-detail-title">AI Forecast</h1>
+                <a href="https://github.com/samdansk2/AI_Forecast" target="_blank" rel="noopener noreferrer" class="project-code-link">View Code</a>
+
+                <div class="project-detail-image-wrapper">
+                    <img src="assets/images/ai_forecast.png" alt="AI Forecast" class="project-detail-image">
+                </div>
+
+                <div class="project-tech-stack">
+                    <h2 class="project-section-heading">Tech Stack</h2>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">Streamlit</div>
+                        <div class="tech-item">Machine Learning</div>
+                        <div class="tech-item">Data Analysis</div>
+                        <div class="tech-item">Pandas</div>
+                        <div class="tech-item">Visualization</div>
                     </div>
-                    <!-- Oil & Gas Data Analysis -->
-                    <div class="project-card glass-card" data-category="data">
-                        <h3 class="project-title">Oil & Gas Data Analysis</h3>
-                        <p class="project-description">Contributed to Oil & Gas Data project focused on analyzing datasets from the BSEE website. Improved data extraction processes using Scrapy and generated compelling data visualizations using Matplotlib and Plotly.</p>
-                        <p class="project-tech">Tech stack: SQL, PostgreSQL, Web Scraping, Data Analysis, Visualization</p>
-                        <a href="https://github.com/vamseeachanta/worldenergydata" class="project-link btn-small">View on GitHub</a>
+                </div>
+
+                <div class="project-features">
+                    <h2 class="project-section-heading">Key Features</h2>
+                    <ul class="features-list">
+                        <li>Market intelligence system for AI trend prediction</li>
+                        <li>R² = 0.857 accuracy in forecasting</li>
+                        <li>Interactive Streamlit dashboard for visualization</li>
+                        <li>Real-time data analysis capabilities</li>
+                        <li>Comprehensive market insights and reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail: Oil & Gas Data Analysis -->
+        <section id="project-oil-gas" class="project-detail section view">
+            <div class="container">
+                <nav class="breadcrumb breadcrumb-dark" aria-label="Breadcrumb">
+                    <a href="#home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">></span>
+                    <a href="#projects" class="breadcrumb-link">Portfolio</a>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current">Oil & Gas Data Analysis</span>
+                </nav>
+                <h1 class="project-detail-title">Oil & Gas Data Analysis</h1>
+                <a href="https://github.com/vamseeachanta/worldenergydata" target="_blank" rel="noopener noreferrer" class="project-code-link">View Code</a>
+
+                <div class="project-detail-image-wrapper">
+                    <img src="assets/images/oil-gas-new.png" alt="Oil & Gas Data Analysis" class="project-detail-image">
+                </div>
+
+                <div class="project-tech-stack">
+                    <h2 class="project-section-heading">Tech Stack</h2>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">Scrapy</div>
+                        <div class="tech-item">Data Visualization</div>
+                        <div class="tech-item">Analytics</div>
+                        <div class="tech-item">Pandas</div>
+                        <div class="tech-item">Matplotlib</div>
                     </div>
+                </div>
+
+                <div class="project-features">
+                    <h2 class="project-section-heading">Key Features</h2>
+                    <ul class="features-list">
+                        <li>Comprehensive analysis of BSEE datasets</li>
+                        <li>Improved data extraction using Scrapy</li>
+                        <li>Compelling data visualizations for insights</li>
+                        <li>Industry-specific analytics and reporting</li>
+                        <li>Automated data collection workflows</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="experience section">
+        <section id="experience" class="experience section hidden">
             <div class="container">
                 <h2 class="section-title">Experience</h2>
                 <div class="timeline">
@@ -273,7 +588,7 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="education section">
+        <section id="education" class="education section hidden">
             <div class="container">
                 <h2 class="section-title">Education</h2>
                 <div class="timeline">
@@ -297,85 +612,23 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact section">
-            <div class="container">
-                <h2 class="section-title">Get in Touch</h2>
-                <div class="contact-content">
-                    <form class="contact-form glass-card" id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="sr-only">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="sr-only">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Your Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                    <div class="contact-info">
-                        <div class="social-links">
-                            <a href="https://linkedin.com/in/samdanshaik" aria-label="LinkedIn" class="social-link">
-                                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
-                            <a href="https://github.com/samdansk2" aria-label="GitHub" class="social-link">
-                                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="mailto:ace.samdan@gmail.com" aria-label="Email" class="social-link">
-                                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Shaik Samdan. All rights reserved.</p>
+            <div class="footer-content">
+                <p class="footer-copyright">&copy; 2025 Shaik Samdan. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="mailto:ace.samdan@gmail.com" class="footer-link">ace.samdan@gmail.com</a>
+                    <a href="https://linkedin.com/in/samdanshaik" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                    <a href="https://github.com/samdansk2" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <!-- Resume Data (local only, gitignored) -->
-    <script src="resume-data.js"></script>
-    <script>
-        function viewResume() {
-            // Check if resume data exists
-            if (typeof resumeData === 'undefined') {
-                alert('Resume is not available at this moment. Please contact me directly.');
-                return;
-            }
-
-            // Convert base64 to blob
-            const byteCharacters = atob(resumeData);
-            const byteNumbers = new Array(byteCharacters.length);
-            for (let i = 0; i < byteCharacters.length; i++) {
-                byteNumbers[i] = byteCharacters.charCodeAt(i);
-            }
-            const byteArray = new Uint8Array(byteNumbers);
-            const blob = new Blob([byteArray], {type: 'application/pdf'});
-
-            // Create object URL and open in new tab
-            const fileURL = URL.createObjectURL(blob);
-            window.open(fileURL, '_blank');
-
-            // Clean up the object URL after a delay
-            setTimeout(() => URL.revokeObjectURL(fileURL), 100);
-        }
-    </script>
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- EmailJS Configuration -->
