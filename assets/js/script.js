@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initViewSwitching();
         initNavigation();
         initHamburgerMenu();
+        initAboutSectionAnimations();
     } catch (error) {
         console.error('Initialization error:', error);
     }
@@ -159,5 +160,61 @@ function initHamburgerMenu() {
         if (e.key === 'Escape' && menuPanel.classList.contains('active')) {
             closeMenu();
         }
+    });
+}
+
+// About section background animations with Intersection Observer
+function initAboutSectionAnimations() {
+    // Select all about sections
+    const aboutSections = document.querySelectorAll('.about-me-section, .experience-section, .education-section, .interests-section');
+
+    if (!aboutSections.length) return;
+
+    // Create Intersection Observer with threshold for smooth transitions
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -20% 0px', // Trigger when section is 20% into viewport
+        threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add in-view class when section enters viewport
+                entry.target.classList.add('in-view');
+            } else {
+                // Remove in-view class when section leaves viewport
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, observerOptions);
+
+    // Observe each section
+    aboutSections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // Alternative: For more prominent animation, use individual observers with different thresholds
+    const fadeInOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3 // Trigger when 30% of section is visible
+    };
+
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add staggered fade-in animation to child elements
+                const container = entry.target.querySelector('.container');
+                if (container) {
+                    container.style.animationDelay = '0.3s';
+                }
+            }
+        });
+    }, fadeInOptions);
+
+    // Apply fade-in observer to sections
+    aboutSections.forEach(section => {
+        fadeInObserver.observe(section);
     });
 }
