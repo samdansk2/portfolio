@@ -84,13 +84,13 @@ function initViewSwitching() {
 function initNavigation() {
     const navbar = document.getElementById('navbar');
 
-    // Navbar background on scroll
+    // Navbar background on scroll - removed style changes that could cause layout shifts
     function updateNavbarBackground() {
+        // Keep navbar styles consistent to prevent layout shifts
+        // Only apply subtle changes that don't affect size
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
             navbar.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.08)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04)';
         }
     }
