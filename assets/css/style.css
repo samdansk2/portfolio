@@ -82,6 +82,7 @@ body {
     position: relative;
     min-height: 100vh;
     font-weight: 400;
+    font-size-adjust: 0.5;
 }
 
 body::before {
@@ -204,9 +205,11 @@ body::before {
     padding: var(--spacing-sm) 0;
     min-height: 60px;
     height: auto;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease;
     border-bottom: 1px solid var(--glass-border);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    contain: layout;
+    will-change: box-shadow;
 }
 
 .nav-container {
@@ -1078,17 +1081,14 @@ body.menu-open {
 /* Services Multi-Section Layout */
 .services-multi-section {
     padding: 0;
-    min-height: auto;
 }
 
 .services-breadcrumb-section {
     padding: calc(var(--spacing-xl) + 60px) 0 var(--spacing-sm) 0;
-    min-height: auto;
 }
 
 .services-header-section {
     padding: var(--spacing-lg) 0 var(--spacing-md) 0;
-    min-height: auto;
 }
 
 .services-main-title {
@@ -1120,7 +1120,6 @@ body.menu-open {
 .services-hero-section {
     padding: var(--spacing-lg) 0;
     background: var(--bg-primary);
-    min-height: auto;
 }
 
 .services-hero-title {
@@ -1151,7 +1150,6 @@ body.menu-open {
 
 .services-boxes-section {
     padding: var(--spacing-lg) 0;
-    min-height: auto;
 }
 
 .services-boxes-grid {
@@ -1159,7 +1157,6 @@ body.menu-open {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
     max-width: 1200px;
-    min-height: auto;
 }
 
 .service-box {
@@ -1193,7 +1190,6 @@ body.menu-open {
 .services-techstack-section {
     padding: var(--spacing-lg) 0;
     background: var(--bg-secondary);
-    min-height: auto;
 }
 
 .techstack-main-title {
