@@ -43,8 +43,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload critical font weights to prevent layout shift -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 
     <!-- Critical inline styles to prevent layout shift -->
     <style>
@@ -63,10 +63,10 @@
             will-change: box-shadow;
         }
 
-        /* Font fallback to prevent layout shift */
+        /* Font fallback to prevent layout shift - Match Inter metrics */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            font-size-adjust: 0.5;
+            font-size-adjust: 0.5116; /* Match Inter's aspect ratio */
         }
 
         /* Prevent font swap layout shifts */
@@ -75,6 +75,21 @@
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Prevent services section layout shifts */
+        .skills-category,
+        .service-box,
+        .skill-item {
+            contain: layout style;
+        }
+
+        /* Ensure consistent sizing during font load */
+        .skill-name,
+        .service-box-title,
+        .category-title {
+            min-height: 1.4em;
+            line-height: 1.4;
         }
     </style>
 
