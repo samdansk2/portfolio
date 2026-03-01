@@ -1453,9 +1453,9 @@ body.menu-open {
 }
 
 .project-detail-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+    width: auto;
+    max-width: 60%;
+    max-height: 400px;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.1);
     object-fit: cover;
